@@ -48,7 +48,7 @@ minetest.register_node("nodes:saltwater_flowing", {
     tiles = {"saltwater_flowing.png"},
     special_tiles = {
         {
-            name = "saltwater_animated.png",
+            name = "saltwater_flowing.png",
             backface_culling = false,
             animation = {
                 type = "vertical_frames",
@@ -58,7 +58,7 @@ minetest.register_node("nodes:saltwater_flowing", {
             },
         },
         {
-            name = "saltwater_animated.png",
+            name = "saltwater_flowing.png",
             backface_culling = true,
             animation = {
                 type = "vertical_frames",
