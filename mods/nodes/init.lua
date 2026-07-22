@@ -21,6 +21,24 @@ minetest.register_node("nodes:dirt", {
     is_ground_content = true,
 })
 
+minetest.register_node("nodes:dirt_with_grass", {
+    description = "Dirt With Grass",
+
+    -- Gestione delle texture con overlay (utilizzando l'operatore ^)
+    tiles = {
+    -- 1. Faccia SUPERIORE: Terra + Overlay Erba dall'alto
+        "dirt.png^grass_top.png",
+
+    -- 2. Faccia INFERIORE: Solo Terra
+        "dirt.png",
+
+    -- 3. FACCE LATERALI (tutti e 4 i lati): Terra + Overlay Erba sul bordo superiore
+        "dirt.png^grass_side.png"
+    },
+
+    groups = {crumbly = 3, soil = 1},
+})
+
 minetest.register_node("nodes:magnetite", {
     description = "Magnetite",
     tiles = {"magnetite.png"},
@@ -82,8 +100,8 @@ minetest.register_node("nodes:saltwater_flowing", {
     liquid_alternative_source = "nodes:saltwater_source",
     liquid_alternative_flowing = "nodes:saltwater_flowing",
     liquid_viscosity = 1,
-post_effect_color = {a = 150, r = 10, g = 60, b = 140},
-groups = {liquid = 3, water = 1, not_in_creative_inventory = 1},
+    post_effect_color = {a = 150, r = 10, g = 60, b = 140},
+    groups = {liquid = 3, water = 1, not_in_creative_inventory = 1},
 })
 
 
@@ -119,6 +137,13 @@ minetest.register_node("nodes:saltwater_source", {
 })
 
 minetest.register_alias("mapgen_water_source", "nodes:saltwater_source")
+
+minetest.register_node("nodes:sand", {
+    description = "Sand",
+    tiles = {"sand.png"},
+    groups = {crumbly=3, soil=1, falling_node = 1},
+    is_ground_content = true,
+})
 
 minetest.register_node("nodes:stone", {
     description = "Stone",
