@@ -14,14 +14,14 @@ minetest.override_item("", {
             -- can break leaves, vines, etc.
             snappy  = {times = {[3] = 0.40}, uses = 0, maxlevel = 1},
             -- node‑specific “hand‑breakable” group (oddly_breakable_by_hand)
-oddly_breakable_by_hand = {
-    times = {[1] = 3.50, [2] = 2.00, [3] = 0.70},
-    uses = 0
-},
+            oddly_breakable_by_hand = {
+                times = {[1] = 3.50, [2] = 2.00, [3] = 0.70},
+                uses = 0,
+            },
         },
         damage_groups = {fleshy = 1},
     },
     -- Manteniamo l’aspetto originale della mano (invisibile, non trasportabile)
-groups = {not_in_creative_inventory = 1},
-description = S("Hand"),
+    groups = {not_in_creative_inventory = 1},
+    description = S("Hand"),
 })
