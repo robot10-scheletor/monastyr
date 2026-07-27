@@ -22,13 +22,18 @@ if name == "" then
 --    sostituiamo la “hand” con una versione ultra‑veloce.
 if minetest.is_creative_enabled("") then
     minetest.register_on_mods_loaded(function()
-    local digtime = 42
-    local caps = {times = {digtime, digtime, digtime}, uses = 0, maxlevel = 256}
+    -- Tempo di scavo istantaneo (0s) per ogni livello di durezza 1..10
+    local digtime = 0
+    local times = {
+        [1] = digtime, [2] = digtime, [3] = digtime, [4] = digtime, [5] = digtime,
+        [6] = digtime, [7] = digtime, [8] = digtime, [9] = digtime, [10] = digtime,
+    }
+    local caps = {times = times, uses = 0, maxlevel = 10}
     minetest.override_item("", {
         range = 10,
         tool_capabilities = {
             full_punch_interval = 0.5,
-            max_drop_level = 3,
+            max_drop_level = 10,
             groupcaps = {
                 crumbly = caps,
                 cracky = caps,
@@ -36,7 +41,7 @@ if minetest.is_creative_enabled("") then
                 choppy = caps,
                 oddly_breakable_by_hand = caps,
                 dig_immediate = {times = {[2] = digtime, [3] = 0},
-                uses = 0, maxlevel = 256},
+                uses = 0, maxlevel = 10},
             },
             damage_groups = {fleshy = 10},
         },

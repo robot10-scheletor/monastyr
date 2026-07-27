@@ -3,21 +3,21 @@ print("This file will be run at load time!")
 minetest.register_node("nodes:burned_stone", {
     description = "Burned Stone",
     tiles = {"burned_stone.png"},
-    groups = {cracky=3, stone=1},
+    groups = {cracky=2, stone=1},
     is_ground_content = true,
 })
 
 minetest.register_node("nodes:cobblestone", {
     description = "Cobblestone",
     tiles = {"cobblestone.png"},
-    groups = {cracky=3, stone=1},
+    groups = {cracky=2, stone=1},
     is_ground_content = false,
 })
 
 minetest.register_node("nodes:dirt", {
     description = "Dirt",
     tiles = {"dirt.png"},
-    groups = {crumbly=3, soil=1},
+    groups = {crumbly=7, soil=1},
     is_ground_content = true,
 })
 
@@ -36,7 +36,7 @@ minetest.register_node("nodes:dirt_with_grass", {
         "dirt.png^grass_side.png"
     },
 
-    groups = {crumbly = 3, soil = 1},
+    groups = {crumbly = 7, soil = 1},
     drop = "nodes:dirt 1"
 })
 
@@ -44,7 +44,7 @@ minetest.register_node("nodes:glassified_sand", {
     description = "Glassified Sand",
     drawtype = "glasslike",
     tiles = {"glassified_sand.png"},
-    groups = {cracky=2},
+    groups = {cracky=5},
     is_ground_content = true,
     use_texture_alpha = "blend",
     paramtype = "light",
@@ -53,14 +53,14 @@ minetest.register_node("nodes:glassified_sand", {
 minetest.register_node("nodes:glassy_sand", {
     description = "Glassy Sand",
     tiles = {"glassy_sand.png"},
-    groups = {crumbly = 3, soil = 1},
+    groups = {crumbly = 8, soil = 1, falling_node = 1},
     is_ground_content = true,
 })
 
 minetest.register_node("nodes:magnetite", {
     description = "Magnetite",
     tiles = {"magnetite.png"},
-    groups = {cracky=2, stone=1},
+    groups = {cracky=3, stone=1},
     is_ground_content = true,
 })
 
@@ -70,21 +70,21 @@ minetest.register_node("nodes:palm_leaves", {
     paramtype = "light",
     waving = 1,
     tiles = {"palm_leaves.png"},
-    groups = {snappy=3, leafdecay=3, leaves=1},
+    groups = {snappy=9, leafdecay=3, leaves=1},
     is_ground_content = false,
 })
 
 minetest.register_node("nodes:palm_log", {
     description = "Palm Log",
     tiles = {"palm_log_top.png", "palm_log_top.png", "palm_log.png"},
-    groups = {choppy=2, tree=1},
+    groups = {choppy=4, tree=1},
     is_ground_content = false,
 })
 
 minetest.register_node("nodes:palm_planks", {
     description = "Palm Planks",
     tiles = {"palm_planks.png"},
-    groups = {choppy=2, wood = 1},
+    groups = {choppy=5, wood = 1},
     is_ground_content = false,
 })
 
@@ -169,14 +169,14 @@ minetest.register_alias("mapgen_water_source", "nodes:saltwater_source")
 minetest.register_node("nodes:sand", {
     description = "Sand",
     tiles = {"sand.png"},
-    groups = {crumbly=3, soil=1, falling_node = 1},
+    groups = {crumbly=8, soil=1, falling_node = 1},
     is_ground_content = true,
 })
 
 minetest.register_node("nodes:stone", {
     description = "Stone",
     tiles = {"stone.png"},
-    groups = {cracky=3, stone=1},
+    groups = {cracky=1, stone=1},
     is_ground_content = true,
     drop = "nodes:cobblestone 1"
 })
