@@ -14,10 +14,10 @@ minetest.register_biome({
     node_water = "nodes:saltwater_source",
     -- ESTENSIONI VERTICALI
     y_min = -31000,
-    y_max = 50,
+    y_max = 40,
 
     -- PUNTI CLIMATICI
-    heat_point = 100,
+    heat_point = 90,
     humidity_point = 0,
 })
 
@@ -40,7 +40,7 @@ minetest.register_biome({
     y_max = 20,
 
     -- PUNTI CLIMATICI
-    heat_point = 30,
+    heat_point = 80,
     humidity_point = 1,
 })
 
@@ -63,7 +63,7 @@ minetest.register_biome({
     y_max = 0,
 
     -- PUNTI CLIMATICI
-    heat_point = 30,
+    heat_point = 80,
     humidity_point = 1,
 })
 
@@ -150,7 +150,7 @@ minetest.register_biome({
     node_water = "nodes:saltwater_source",
     -- ESTENSIONI VERTICALI
     y_min = 1,
-    y_max = 20,
+    y_max = 30,
 
     -- PUNTI CLIMATICI
     heat_point = 50,
@@ -182,9 +182,7 @@ minetest.register_biome({
 
 minetest.register_biome({
     name = "snowy_hills",
-
-    -- Strati del terreno emerso
-    node_dust = "default:snow",
+    node_dust = "nodes:snow",
     node_top = "nodes:dirt_with_snow",
     depth_top = 1,
 
