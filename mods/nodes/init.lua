@@ -1,9 +1,45 @@
 print("This file will be run at load time!")
 
+minetest.register_node("nodes:ash", {
+    description = "Ash",
+    tiles = {"ash.png"},
+    paramtype = "light",
+    buildable_to = true,
+    floodable = true,
+    drawtype = "nodebox",
+    node_box = {
+        type = "fixed",
+        fixed = {
+            {-0.5, -0.5, -0.5, 0.5, -0.25, 0.5},
+        },
+    },
+    collision_box = {
+        type = "fixed",
+        fixed = {
+            {-0.5, -0.5, -0.5, 0.5, -6 / 16, 0.5},
+        },
+    },
+    groups = {crumbly = 10, falling_node = 1, snowy = 1},
+
+    on_construct = function(pos)
+    pos.y = pos.y - 1
+    if minetest.get_node(pos).name == "nodes:dirt_with_grass" then
+        minetest.set_node(pos, {name = "nodes:dirt_with_snow"})
+        end
+        end,
+})
+
 minetest.register_node("nodes:burned_stone", {
     description = "Burned Stone",
     tiles = {"burned_stone.png"},
     groups = {cracky=2, stone=1},
+    is_ground_content = true,
+})
+
+minetest.register_node("nodes:cement", {
+    description = "Cement",
+    tiles = {"cement.png"},
+    groups = {cracky=6, stone=1},
     is_ground_content = true,
 })
 
@@ -19,6 +55,25 @@ minetest.register_node("nodes:dirt", {
     tiles = {"dirt.png"},
     groups = {crumbly=7, soil=1},
     is_ground_content = true,
+})
+
+minetest.register_node("nodes:dirt_with_dry_grass", {
+    description = "Dirt With Dry Grass",
+
+    -- Gestione delle texture con overlay (utilizzando l'operatore ^)
+tiles = {
+    -- 1. Faccia SUPERIORE: Terra + Overlay Erba dall'alto
+    "dirt.png^dry_grass_top.png",
+
+    -- 2. Faccia INFERIORE: Solo Terra
+    "dirt.png",
+
+    -- 3. FACCE LATERALI (tutti e 4 i lati): Terra + Overlay Erba sul bordo superiore
+    "dirt.png^dry_grass_side.png"
+},
+
+groups = {crumbly = 7, soil = 1},
+drop = "nodes:dirt 1"
 })
 
 minetest.register_node("nodes:dirt_with_grass", {
@@ -38,6 +93,63 @@ minetest.register_node("nodes:dirt_with_grass", {
 
     groups = {crumbly = 7, soil = 1},
     drop = "nodes:dirt 1"
+})
+
+minetest.register_node("nodes:dirt_with_magic_grass", {
+    description = "Dirt With Magic Grass",
+
+    -- Gestione delle texture con overlay (utilizzando l'operatore ^)
+tiles = {
+    -- 1. Faccia SUPERIORE: Terra + Overlay Erba dall'alto
+    "dirt.png^magic_grass_top.png",
+
+    -- 2. Faccia INFERIORE: Solo Terra
+    "dirt.png",
+
+    -- 3. FACCE LATERALI (tutti e 4 i lati): Terra + Overlay Erba sul bordo superiore
+    "dirt.png^magic_grass_side.png"
+},
+
+groups = {crumbly = 7, soil = 1},
+drop = "nodes:dirt 1"
+})
+
+minetest.register_node("nodes:dirt_with_obscure_grass", {
+    description = "Dirt With Obscure Grass",
+
+    -- Gestione delle texture con overlay (utilizzando l'operatore ^)
+tiles = {
+    -- 1. Faccia SUPERIORE: Terra + Overlay Erba dall'alto
+    "dirt.png^obscure_grass_top.png",
+
+    -- 2. Faccia INFERIORE: Solo Terra
+    "dirt.png",
+
+    -- 3. FACCE LATERALI (tutti e 4 i lati): Terra + Overlay Erba sul bordo superiore
+    "dirt.png^obscure_grass_side.png"
+},
+
+groups = {crumbly = 7, soil = 1},
+drop = "nodes:dirt 1"
+})
+
+minetest.register_node("nodes:dirt_with_red_grass", {
+    description = "Tundra's Dirt",
+
+    -- Gestione delle texture con overlay (utilizzando l'operatore ^)
+tiles = {
+    -- 1. Faccia SUPERIORE: Terra + Overlay Erba dall'alto
+    "dirt.png^tundra_grass_top.png",
+
+    -- 2. Faccia INFERIORE: Solo Terra
+    "dirt.png",
+
+    -- 3. FACCE LATERALI (tutti e 4 i lati): Terra + Overlay Erba sul bordo superiore
+    "dirt.png^tundra_grass_side.png"
+},
+
+groups = {crumbly = 7, soil = 1},
+drop = "nodes:dirt 1"
 })
 
 minetest.register_node("nodes:dirt_with_snow", {
@@ -282,6 +394,20 @@ minetest.register_node("nodes:snow", {
                            minetest.set_node(pos, {name = "nodes:dirt_with_snow"})
                            end
                            end,
+})
+
+minetest.register_node("nodes:snow_block", {
+    description = "Snow Block",
+    tiles = {"snow.png"},
+    paramtype = "light",
+    floodable = true,
+    groups = {crumbly = 10, falling_node = 1, snowy = 1},
+    on_construct = function(pos)
+    pos.y = pos.y - 1
+    if minetest.get_node(pos).name == "nodes:dirt_with_grass" then
+        minetest.set_node(pos, {name = "nodes:dirt_with_snow"})
+        end
+        end,
 })
 
 minetest.register_node("nodes:stone", {
