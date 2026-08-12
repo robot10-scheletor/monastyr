@@ -84,6 +84,41 @@ minetest.register_biome({
 })
 
 minetest.register_biome({
+    name = "frost_lands",
+    node_dust = "nodes:snow",
+    node_top = "nodes:snow_block",
+    depth_top = 1,
+    node_filler = "nodes:snow_block",
+    depth_filler = 3,
+    node_stone = "nodes:stone",
+    node_water_top = "nodes:ice",
+    depth_water_top = 20,
+    node_river_water = "nodes:ice",
+    node_riverbed = "nodes:sande",
+    depth_riverbed = 2,
+    node_dungeon = "nodes:ice",
+    y_max = 31000,
+    y_min = 1,
+    heat_point = 0,
+    humidity_point = 73,
+})
+
+minetest.register_biome({
+    name = "frost_ocean",
+    node_top = "nodes:sand",
+    depth_top = 1,
+    node_filler = "nodes:sand",
+    depth_filler = 3,
+    node_stone = "nodes:stone",
+    node_water_top = "nodes:ice",
+    depth_water_top = 20,
+    y_max = 1,
+    y_min = -31000,
+    heat_point = 0,
+    humidity_point = 73,
+})
+
+minetest.register_biome({
     name = "glassified_desert",
 
     -- Strati del terreno emerso
