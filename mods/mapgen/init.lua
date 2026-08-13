@@ -497,3 +497,322 @@ minetest.register_biome({
     heat_point = 95,
     humidity_point = 4,
 })
+
+-- ============================================================
+-- Decorations: spawn naturale dei 5 alberi nei biomi
+-- ============================================================
+-- Richiede il mod "plantlikes" (vedi mods/plantlikes/mod.conf, depends = mapgen).
+-- I file schematic (.mts) vivono in mods/mapgen/schems/.
+
+local mapgen_schems = minetest.get_modpath("mapgen") .. "/schems"
+
+minetest.register_decoration({
+    name = "plantlikes:blusk",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_magic_grass" },
+    biomes = { "magic_lands" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/blusk.mts",
+    place_offset_y = -1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.0001,
+})
+
+minetest.register_decoration({
+    name = "plantlikes:palm",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass" },
+    biomes = { "magnetic_isles" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/palm.mts",
+    place_offset_y = -1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.02,
+})
+
+minetest.register_decoration({
+    name = "plantlikes:pine",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_snow", "nodes:snow_block" },
+    biomes = { "snowy_hills" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/pine.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.020,
+})
+
+minetest.register_decoration({
+    name = "plantlikes:spruce",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_snow" },
+    biomes = { "taiga" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/spruce.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.020,
+})
+
+minetest.register_decoration({
+    name = "plantlikes:spruce_small",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_snow" },
+    biomes = { "taiga" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/spruce_small.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.004,
+})
+
+minetest.register_decoration({
+    name = "plantlikes:weeping_willow",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_obscure_grass" },
+    biomes = { "obscure_lands" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/weeping_willow.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.002,
+})
+
+-- ============================================================
+-- Decorations: alberi aggiuntivi (10 nuove specie)
+-- ============================================================
+-- Specie con variante _small: due decorations separate con fill_ratio
+-- che riproducono il rapporto 75% small / 25% normale (qui 75 : 25).
+-- Specie singole: una sola decoration.
+-- I biomi qui sotto sono scelti "in stile logico"; modificabili a piacere.
+
+-- acacia: savanna, singolo
+minetest.register_decoration({
+    name = "plantlikes:acacia",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_dry_grass" },
+    biomes = { "savanna" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/acacia.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.002,
+})
+
+-- apple: plains, singolo
+minetest.register_decoration({
+    name = "plantlikes:apple",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass" },
+    biomes = { "plains", "forest" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/apple.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.001,
+})
+
+-- birch: forest, doppio (75% small / 25% normale)
+minetest.register_decoration({
+    name = "plantlikes:birch",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_magic_grass" },
+    biomes = { "magic_lands" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/birch.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.001,
+})
+minetest.register_decoration({
+    name = "plantlikes:birch_small",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass" },
+    biomes = { "forest" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/birch_small.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.003,
+})
+
+-- ebony: ebony_forest, singolo
+minetest.register_decoration({
+    name = "plantlikes:ebony",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_dry_grass" },
+    biomes = { "ebony_forest" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/ebony.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.003,
+})
+
+-- frostwood: snowy_peaks/snowy_mountains, doppio (75% small / 25% normale)
+minetest.register_decoration({
+    name = "plantlikes:frostwood",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_snow" },
+    biomes = { "permafrost" },
+    y_min = 20, y_max = 100,
+    schematic = mapgen_schems .. "/frostwood.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.001,
+})
+minetest.register_decoration({
+    name = "plantlikes:frostwood_small",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_snow" },
+    biomes = { "permafrost" },
+    y_min = 20, y_max = 100,
+    schematic = mapgen_schems .. "/frostwood_small.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.003,
+})
+
+-- lemon: magic_lands, singolo
+minetest.register_decoration({
+    name = "plantlikes:lemon",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_dry_grass" },
+    biomes = { "savanna" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/lemon.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.0002,
+})
+
+-- oak: plains/forest, doppio (75% small / 25% normale)
+minetest.register_decoration({
+    name = "plantlikes:oak",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass" },
+    biomes = { "plains", "forest" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/oak.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.002,
+})
+minetest.register_decoration({
+    name = "plantlikes:oak_small",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass" },
+    biomes = { "plains", "forest" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/oak_small.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.006,
+})
+
+minetest.register_decoration({
+    name = "plantlikes:obscure_oak",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_obscure_grass" },
+    biomes = { "obscure_lands" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/obscure_oak.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.020,
+})
+
+-- poplar: plains, doppio (75% small / 25% normale)
+minetest.register_decoration({
+    name = "plantlikes:poplar",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass", "nodes:dirt_with_magic_grass" },
+    biomes = { "forest", "magic_lands" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/poplar.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.0005,
+})
+minetest.register_decoration({
+    name = "plantlikes:poplar_small",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass", "nodes:dirt_with_magic_grass" },
+    biomes = { "plains" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/poplar_small.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.001,
+})
+
+-- willow: forest, doppio (75% small / 25% normale)
+minetest.register_decoration({
+    name = "plantlikes:willow",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_magic_grass" },
+    biomes = { "magic_lands" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/willow.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.002,
+})
+minetest.register_decoration({
+    name = "plantlikes:willow_small",
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass" },
+    biomes = { "forest" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/willow_small.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.003,
+})
+
+-- burned: solo decoration in lavic_lands (nessun sapling), doppio (75% small / 25%)
+minetest.register_decoration({
+    name = "plantlikes:burned",
+    deco_type = "schematic",
+    place_on = { "nodes:burned_stone" },
+    biomes = { "lavic_lands" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/burned.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.0005,
+})
+minetest.register_decoration({
+    name = "plantlikes:burned_small",
+    deco_type = "schematic",
+    place_on = { "nodes:burned_stone" },
+    biomes = { "lavic_lands" },
+    y_min = 1, y_max = 100,
+    schematic = mapgen_schems .. "/burned_small.mts",
+    place_offset_y = 1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.0009,
+})
