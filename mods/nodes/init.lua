@@ -142,6 +142,13 @@ minetest.register_node("nodes:blusk_planks", {
     is_ground_content = false,
 })
 
+minetest.register_node("nodes:bricks", {
+    description = "Bricks",
+    tiles = {"bricks.png"},
+    groups = {cracky=1},
+    is_ground_content = false,
+})
+
 minetest.register_node("nodes:burned_log", {
     description = "Burned Log",
     tiles = {"burned_log_top.png", "burned_log_top.png", "burned_log.png"},
@@ -482,6 +489,8 @@ minetest.register_node("nodes:lava_source", {
     post_effect_color = {a = 150, r = 10, g = 60, b = 140},
     groups = {liquid = 3, water = 1},
 })
+
+minetest.register_alias("mapgen_lava_source", "nodes:lava_source")
 
 minetest.register_node("nodes:lemon_tree_leaves", {
     description = "Lemon Tree Leaves",
@@ -858,6 +867,13 @@ minetest.register_node("nodes:stone", {
     groups = {cracky=1, stone=1},
     is_ground_content = true,
     drop = "nodes:cobblestone 1"
+})
+
+minetest.register_node("nodes:stone_bricks", {
+    description = "Stone Bricks",
+    tiles = {"stone_bricks.png"},
+    groups = {cracky=1, stone=1},
+    is_ground_content = false,
 })
 
 minetest.register_alias("mapgen_stone", "nodes:stone")

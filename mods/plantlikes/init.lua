@@ -239,6 +239,13 @@ function plantlikes.grow_sapling(pos, node)
     minetest.log("action", "[plantlikes] Growing " .. node.name ..
         " at " .. minetest.pos_to_string(pos) .. " using " .. schem_file)
 
+    -- Rimuovi il sapling PRIMA di piazzare lo schematic: con
+    -- force_placement=false lo schematic non sovrascrive nodi
+    -- esistenti, quindi il blocco "tronco alla base" verrebbe
+    -- bloccato dal sapling. Rimuovendolo, la cella diventa aria
+    -- e il tronco viene piazzato correttamente.
+    minetest.remove_node(pos)
+
     minetest.place_schematic(place_pos, schem_path, def.rotation, nil, false)
 end
 

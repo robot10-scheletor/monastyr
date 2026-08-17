@@ -666,7 +666,7 @@ minetest.register_decoration({
     deco_type = "schematic",
     place_on = { "nodes:dirt_with_snow" },
     biomes = { "permafrost" },
-    y_min = 20, y_max = 100,
+    y_min = 1, y_max = 100,
     schematic = mapgen_schems .. "/frostwood.mts",
     place_offset_y = 1,
     flags = "place_center_x, place_center_z",
@@ -678,7 +678,7 @@ minetest.register_decoration({
     deco_type = "schematic",
     place_on = { "nodes:dirt_with_snow" },
     biomes = { "permafrost" },
-    y_min = 20, y_max = 100,
+    y_min = 1, y_max = 100,
     schematic = mapgen_schems .. "/frostwood_small.mts",
     place_offset_y = 1,
     flags = "place_center_x, place_center_z",
@@ -816,3 +816,379 @@ minetest.register_decoration({
     rotation = "random",
     fill_ratio = 0.0009,
 })
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:coal_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 8 * 8 * 8,
+    clust_num_ores = 9,
+    clust_size     = 3,
+    y_max          = 31000,
+    y_min          = 1025,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:coal_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 8 * 8 * 8,
+    clust_num_ores = 8,
+    clust_size     = 3,
+    y_max          = 64,
+    y_min          = -127,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:coal_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 12 * 12 * 12,
+    clust_num_ores = 30,
+    clust_size     = 5,
+    y_max          = -128,
+    y_min          = -31000,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:tin_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 10 * 10 * 10,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = 31000,
+    y_min          = 1025,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:tin_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 8 * 8 * 8,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = 64,
+    y_min          = -127,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:tin_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 10 * 10 * 10,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = -128,
+    y_min          = -31000,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:copper_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 9 * 9 * 9,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = 31000,
+    y_min          = 1025,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:copper_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 12 * 12 * 12,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = -12,
+    y_min          = -100,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:copper_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 9 * 9 * 9,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = -128,
+    y_min          = -31000,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:iron_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 9 * 9 * 9,
+    clust_num_ores = 12,
+    clust_size     = 3,
+    y_max          = 31000,
+    y_min          = 1025,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:iron_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 7 * 7 * 7,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = -30,
+    y_min          = -150,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:iron_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 12 * 12 * 12,
+    clust_num_ores = 29,
+    clust_size     = 5,
+    y_max          = -151,
+    y_min          = -31000,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:gold_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 13 * 13 * 13,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = 31000,
+    y_min          = 1025,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:gold_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 15 * 15 * 15,
+    clust_num_ores = 3,
+    clust_size     = 2,
+    y_max          = -30,
+    y_min          = -150,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:gold_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 13 * 13 * 13,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = -151,
+    y_min          = -31000,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:silver_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 13 * 13 * 13,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = 31000,
+    y_min          = 1025,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:silver_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 15 * 15 * 15,
+    clust_num_ores = 3,
+    clust_size     = 2,
+    y_max          = -30,
+    y_min          = -150,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:silver_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 13 * 13 * 13,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = -151,
+    y_min          = -31000,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:mithril_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 26 * 26 * 26,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = 31000,
+    y_min          = 1025,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:mithril_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 30 * 30 * 30,
+    clust_num_ores = 3,
+    clust_size     = 2,
+    y_max          = -30,
+    y_min          = -150,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:mithril_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 29 * 29 * 29,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = -151,
+    y_min          = -31000,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:orcish_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 20 * 20 * 20,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = 31000,
+    y_min          = 1025,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:orcish_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 20 * 20 * 20,
+    clust_num_ores = 3,
+    clust_size     = 2,
+    y_max          = -40,
+    y_min          = -140,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:orcish_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 17 * 17 * 17,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = -141,
+    y_min          = -31000,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:tungsten_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 20 * 20 * 20,
+    clust_num_ores = 2,
+    clust_size     = 3,
+    y_max          = 31000,
+    y_min          = 1025,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:tungsten_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 20 * 20 * 20,
+    clust_num_ores = 3,
+    clust_size     = 2,
+    y_max          = -50,
+    y_min          = -140,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:tungsten_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 17 * 17 * 17,
+    clust_num_ores = 5,
+    clust_size     = 3,
+    y_max          = -141,
+    y_min          = -31000,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:diamond_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 15 * 15 * 15,
+    clust_num_ores = 4,
+    clust_size     = 3,
+    y_max          = 31000,
+    y_min          = 1025,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:diamond_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 17 * 17 * 17,
+    clust_num_ores = 4,
+    clust_size     = 3,
+    y_max          = -50,
+    y_min          = -65,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:diamond_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 15 * 15 * 15,
+    clust_num_ores = 4,
+    clust_size     = 3,
+    y_max          = -66,
+    y_min          = -31000,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:black_diamond_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 30 * 30 * 30,
+    clust_num_ores = 4,
+    clust_size     = 3,
+    y_max          = 31000,
+    y_min          = 1025,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:black_diamond_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 34 * 34 * 34,
+    clust_num_ores = 4,
+    clust_size     = 3,
+    y_max          = -80,
+    y_min          = -100,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:black_diamond_ore",
+    wherein        = "nodes:stone",
+    clust_scarcity = 30 * 30 * 30,
+    clust_num_ores = 4,
+    clust_size     = 3,
+    y_max          = -101,
+    y_min          = -31000,
+})
+
+minetest.register_ore({
+    ore_type       = "scatter",
+    ore            = "nodes:turquoise_ore",
+    wherein        = "nodes:glassy_sand",
+    clust_scarcity = 15 * 15 * 15,
+    clust_num_ores = 4,
+    clust_size     = 3,
+    y_max          = 31000,
+    y_min          = -31000,
+})
+
+
