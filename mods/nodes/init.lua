@@ -585,6 +585,12 @@ minetest.register_node("nodes:obscure_oak_planks", {
     is_ground_content = false,
 })
 
+minetest.register_node("nodes:obsidian", {
+    description = "Obsidian",
+    tiles = {"obsidian.png"},
+    groups = {cracky = 7, stone=1},
+})
+
 minetest.register_node("nodes:orcish_ore", {
     description = "Orcish Ore",
     tiles = {
