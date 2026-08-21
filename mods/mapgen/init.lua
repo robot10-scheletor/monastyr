@@ -27,10 +27,10 @@ minetest.register_biome({
 
     -- Strati del terreno emerso
     node_top = "nodes:sand",
-    depth_top = 2,
+    depth_top = 5,
 
-    node_filler = "nodes:sand",
-    depth_filler = 3,
+    node_filler = "nodes:desert_stone",
+    depth_filler = 10,
 
     node_stone = "nodes:stone",
 

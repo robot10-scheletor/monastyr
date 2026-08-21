@@ -27,6 +27,7 @@ local DISALLOWED_DRAWTYPES = {
     ["mesh"]                       = true,  -- meshes would deform unpredictably
     ["none"]                       = true,
     ["nodebox"]                    = true,  -- custom-shaped nodes have their own height
+    ["signlike"]                    = true,
 }
 
 -- Source modprefixes we generate stairs for. Currently only "nodes:".

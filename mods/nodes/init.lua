@@ -149,6 +149,12 @@ minetest.register_node("nodes:bricks", {
     is_ground_content = false,
 })
 
+minetest.register_node("nodes:bronze_block", {
+    description = "Bronze Block",
+    tiles = {"bronze_block.png"},
+    groups = {cracky = 7, stone=1},
+})
+
 minetest.register_node("nodes:burned_log", {
     description = "Burned Log",
     tiles = {"burned_log_top.png", "burned_log_top.png", "burned_log.png"},
@@ -194,11 +200,23 @@ minetest.register_node("nodes:cobblestone", {
     is_ground_content = false,
 })
 
+minetest.register_node("nodes:copper_block", {
+    description = "Copper Block",
+    tiles = {"copper_block.png"},
+    groups = {cracky = 7, stone=1},
+})
+
 minetest.register_node("nodes:copper_ore", {
     description = "Copper Ore",
     tiles = {
         "stone.png^copper_ore_overlay.png",
     },
+    groups = {cracky = 7, stone=1},
+})
+
+minetest.register_node("nodes:desert_stone", {
+    description = "Desert Stone",
+    tiles = {"desert_stone.png",},
     groups = {cracky = 7, stone=1},
 })
 
@@ -393,6 +411,12 @@ minetest.register_node("nodes:glassy_sand", {
     is_ground_content = true,
 })
 
+minetest.register_node("nodes:gold_block", {
+    description = "Gold Block",
+    tiles = {"gold_block.png"},
+    groups = {cracky = 7, stone=1},
+})
+
 minetest.register_node("nodes:gold_ore", {
     description = "Gold Ore",
     tiles = {
@@ -412,12 +436,36 @@ minetest.register_node("nodes:ice", {
     groups = {cracky = 9, cools_lava = 1, slippery = 10},
 })
 
+minetest.register_node("nodes:iron_block", {
+    description = "Iron Block",
+    tiles = {"iron_block.png"},
+    groups = {cracky = 7, stone=1},
+})
+
 minetest.register_node("nodes:iron_ore", {
     description = "Iron Ore",
     tiles = {
         "stone.png^iron_ore_overlay.png",
     },
     groups = {cracky = 7, stone=1},
+})
+
+minetest.register_node("nodes:ladder", {
+    description = "Ladder",
+    drawtype = "signlike",
+    tiles = {"ladder.png"},
+    inventory_image = "ladder.png",
+    wield_image = "ladder.png",
+    paramtype = "light",
+    paramtype2 = "wallmounted",
+    sunlight_propagates = true,
+    walkable = false,
+    climbable = true,
+    is_ground_content = false,
+    selection_box = {
+        type = "wallmounted",
+    },
+    groups = {choppy = 10, oddly_breakable_by_hand = 10, flammable = 2},
 })
 
 minetest.register_node("nodes:lava_flowing", {
@@ -525,6 +573,12 @@ minetest.register_node("nodes:magnetite", {
     is_ground_content = true,
 })
 
+minetest.register_node("nodes:mithril_block", {
+    description = "Mithril Block",
+    tiles = {"mithril_block.png"},
+    groups = {cracky = 7, stone=1},
+})
+
 minetest.register_node("nodes:mithril_ore", {
     description = "Mithril Ore",
     tiles = {
@@ -588,6 +642,12 @@ minetest.register_node("nodes:obscure_oak_planks", {
 minetest.register_node("nodes:obsidian", {
     description = "Obsidian",
     tiles = {"obsidian.png"},
+    groups = {cracky = 7, stone=1},
+})
+
+minetest.register_node("nodes:orcish_block", {
+    description = "Orcish Block",
+    tiles = {"orcish_block.png"},
     groups = {cracky = 7, stone=1},
 })
 
@@ -762,6 +822,11 @@ minetest.register_node("nodes:sand", {
     is_ground_content = true,
 })
 
+minetest.register_node("nodes:silver_block", {
+    description = "Silver Block",
+    tiles = {"silver_block.png"},
+    groups = {cracky = 7, stone=1},
+})
 
 minetest.register_node("nodes:silver_ore", {
     description = "Silver Ore",
@@ -866,6 +931,11 @@ minetest.register_node("nodes:spruce_planks", {
     is_ground_content = false,
 })
 
+minetest.register_node("nodes:steel_block", {
+    description = "Steel Block",
+    tiles = {"steel_block.png"},
+    groups = {cracky = 7, stone=1},
+})
 
 minetest.register_node("nodes:stone", {
     description = "Stone",
@@ -884,11 +954,23 @@ minetest.register_node("nodes:stone_bricks", {
 
 minetest.register_alias("mapgen_stone", "nodes:stone")
 
+minetest.register_node("nodes:tin_block", {
+    description = "Tin Block",
+    tiles = {"tin_block.png"},
+    groups = {cracky = 7, stone=1},
+})
+
 minetest.register_node("nodes:tin_ore", {
     description = "Tin Ore",
     tiles = {
         "stone.png^tin_ore_overlay.png",
     },
+    groups = {cracky = 7, stone=1},
+})
+
+minetest.register_node("nodes:tungsten_block", {
+    description = "tungsten Block",
+    tiles = {"tungsten_block.png"},
     groups = {cracky = 7, stone=1},
 })
 
@@ -908,6 +990,32 @@ minetest.register_node("nodes:turquoise_ore", {
     groups = {cracky = 7, stone=1},
 })
 
+minetest.register_node("nodes:water_column", {
+    description = "Water Column",
+    drawtype = "liquid",
+    tiles = {
+        {
+            name = "water_column.png",
+            animation = {
+                type = "vertical_frames",
+                aspect_w = 32,
+                aspect_h = 32,
+                length = 1.0,
+            },
+        },
+    },
+    use_texture_alpha = "blend",
+    paramtype = "light",
+    walkable = false,
+    pointable = false,
+    diggable = false,
+    climbable = true,
+    buildable_to = true,
+    is_ground_content = false,
+    drop = "",
+    post_effect_color = {a = 150, r = 10, g = 60, b = 140},
+    groups = {liquid = 3, water = 1},
+})
 
 minetest.register_node("nodes:water_flowing", {
     description = "Flowing Water",

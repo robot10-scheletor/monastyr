@@ -21,7 +21,8 @@ local DISALLOWED_DRAWTYPES = {
     ["fire"]                       = true,
     ["mesh"]                       = true,  -- meshes would shrink unpredictably
     ["none"]                       = true,
-    ["nodebox"]                    = true,  -- custom-shaped nodes (ash, snow) have their own height
+    ["nodebox"]                    = true, -- custom-shaped nodes (ash, snow) have their own height
+    ["signlike"]                    = true,
 }
 
 -- Source modprefixes we generate slabs for. Currently only "nodes:".
