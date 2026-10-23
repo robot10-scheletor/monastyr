@@ -296,6 +296,7 @@ minetest.register_abm({
             { x = -1, y =  0, z =  0 },
             { x =  0, y =  0, z =  1 },
             { x =  0, y =  0, z = -1 },
+            { x =  0, y =  1, z =  0 },
             { x =  0, y = -1, z =  0 },
         }) do
             local p = { x = pos.x + off.x, y = pos.y + off.y, z = pos.z + off.z }
@@ -310,3 +311,21 @@ minetest.register_abm({
 })
 
 minetest.log("action", "[plantlikes] Mod loaded: 15 saplings, ABM growth (75/25 _small), leafdecay enabled.")
+
+
+minetest.register_node("plantlikes:grass", {
+    description = "Grass",
+    drawtype = "plantlike",
+    waving = 1,
+    tiles = {"grass.png"},
+    inventory_image = "grass.png",
+    paramtype = "light",
+    sunlight_propagates = true,
+    walkable = false,
+    buildable_to = true,
+    groups = {snappy = 10, grass=1},
+    selection_box = {
+        type = "fixed",
+        fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
+    },
+ })

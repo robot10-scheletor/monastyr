@@ -516,7 +516,7 @@ minetest.register_decoration({
     place_offset_y = -1,
     flags = "place_center_x, place_center_z",
     rotation = "random",
-    fill_ratio = 0.0001,
+    fill_ratio = 0.00001,
 })
 
 minetest.register_decoration({
@@ -815,6 +815,142 @@ minetest.register_decoration({
     flags = "place_center_x, place_center_z",
     rotation = "random",
     fill_ratio = 0.0009,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass" },
+    biomes = { "magnetic_isles" },
+    y_min = 1, y_max = 300,
+    schematic = mapgen_schems .. "/floating_island_small_1.mts",
+    place_offset_y = 30,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.0005,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass" },
+    biomes = { "magnetic_isles" },
+    y_min = 1, y_max = 300,
+    schematic = mapgen_schems .. "/floating_island_small_2.mts",
+    place_offset_y = 50,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.00004,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:sand" },
+    biomes = { "magnetic_isles_waters" },
+    y_min = -10, y_max = 1,
+    schematic = mapgen_schems .. "/island_with_water_spiral.mts",
+    place_offset_y = 0,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.00004,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:sand" },
+    biomes = { "magnetic_isles_waters" },
+    y_min = -50, y_max = 1,
+    schematic = mapgen_schems .. "/waterfall_island.mts",
+    place_offset_y = 50,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.00004,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:sand" },
+    biomes = { "magnetic_isles_waters" },
+    y_min = -50, y_max = 1,
+    schematic = mapgen_schems .. "/anomaly_1.mts",
+    place_offset_y = 42,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.00004,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:sand" },
+    biomes = { "magnetic_isles_waters" },
+    y_min = -50, y_max = 1,
+    schematic = mapgen_schems .. "/anomaly_2.mts",
+    place_offset_y = 50,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.00004,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass" },
+    biomes = { "magnetic_isles" },
+    y_min = 1, y_max = 300,
+    schematic = mapgen_schems .. "/reverse_waterfall.mts",
+    place_offset_y = 30,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.0001,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass" },
+    biomes = { "magnetic_isles" },
+    y_min = 1, y_max = 300,
+    schematic = mapgen_schems .. "/sky_lake.mts",
+    place_offset_y = 30,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.0001,
+})
+
+minetest.register_decoration({
+    name = "plantlikes:grass",
+    deco_type = "simple",
+
+    -- I blocchi SU CUI l'erba può generarsi (puoi mettere più blocchi)
+    place_on = {"nodes:dirt_with_grass"},
+
+-- Inserisci solo blocchi vuoti/aria sopra il blocco di supporto
+    place_offset_y = 0,
+
+    sidelen = 16,
+
+-- Noise per controllare la distribuzione (densità)
+    noise_params = {
+        offset = 0.02,     -- offset leggermente positivo per garantire una copertura base
+        scale = 0.1,       -- Aumenta (es. 0.2 o 0.3) per avere macchie più dense
+        spread = {x = 50, y = 50, z = 50}, -- Dimensione dei "gruppi" di erba
+        seed = 420,        -- Cambia questo numero per cambiare il pattern di generazione
+        octaves = 3,
+        persist = 0.6
+    },
+
+-- Biomi specifici del Mapgen v7 (Minetest Game / Luanti predefiniti)
+    biomes = {
+        "plains",
+        "forest",
+        "magnetic_isles",
+    },
+
+-- Limiti di altezza (Y)
+    y_min = 1,
+    y_max = 310,
+-- Il nodo da posizionare (la tua erba plantlike)
+    decoration = "plantlikes:grass",
+
+-- Opzionale: evita che l'erba spawni sott'acqua
+    spawn_by = "nodes:dirt_with_grass",
+    num_spawn_by = 1,
 })
 
 minetest.register_ore({
