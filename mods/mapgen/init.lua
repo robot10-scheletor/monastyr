@@ -914,6 +914,79 @@ minetest.register_decoration({
 })
 
 minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_red_grass" },
+    biomes = { "tundra" },
+    y_min = 1, y_max = 300,
+    schematic = mapgen_schems .. "/double_dolmen.mts",
+    place_offset_y = -13,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.00005,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_red_grass" },
+    biomes = { "tundra" },
+    y_min = 1, y_max = 300,
+    schematic = mapgen_schems .. "/menhir.mts",
+    place_offset_y = -13,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.00005,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_red_grass" },
+    biomes = { "tundra" },
+    y_min = 1, y_max = 300,
+    schematic = mapgen_schems .. "/menhir_lake.mts",
+    place_offset_y = -11,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.00003,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_red_grass" },
+    biomes = { "tundra" },
+    y_min = 1, y_max = 300,
+    schematic = mapgen_schems .. "/triple_menhir.mts",
+    place_offset_y = -13,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.00004,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_red_grass" },
+    biomes = { "tundra" },
+    y_min = 1, y_max = 300,
+    schematic = mapgen_schems .. "/cromlech.mts",
+    place_offset_y = -13,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.00001,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_red_grass" },
+    biomes = { "tundra" },
+    y_min = 1, y_max = 300,
+    schematic = mapgen_schems .. "/golden_menhir.mts",
+    place_offset_y = -13,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.00001,
+})
+
+
+minetest.register_decoration({
     name = "plantlikes:grass",
     deco_type = "simple",
 
@@ -944,12 +1017,38 @@ minetest.register_decoration({
 
 -- Limiti di altezza (Y)
     y_min = 1,
-    y_max = 310,
+    y_max = 31000,
 -- Il nodo da posizionare (la tua erba plantlike)
     decoration = "plantlikes:grass",
 
 -- Opzionale: evita che l'erba spawni sott'acqua
     spawn_by = "nodes:dirt_with_grass",
+    num_spawn_by = 1,
+})
+
+minetest.register_decoration({
+    name = "plantlikes:red_grass",
+    deco_type = "simple",
+    place_on = {"nodes:dirt_with_red_grass"},
+    place_offset_y = 0,
+    sidelen = 16,
+    noise_params = {
+        offset = 1.90,     -- offset leggermente positivo per garantire una copertura base
+        scale = 0.3,       -- Aumenta (es. 0.2 o 0.3) per avere macchie più dense
+        spread = {x = 100, y = 100, z = 100}, -- Dimensione dei "gruppi" di erba
+        seed = 421,        -- Cambia questo numero per cambiare il pattern di generazione
+        octaves = 3,
+        persist = 0.6
+    },
+    biomes = {"tundra",},
+    -- Limiti di altezza (Y)
+    y_min = 1,
+    y_max = 31000,
+    -- Il nodo da posizionare (la tua erba plantlike)
+    decoration = "plantlikes:red_grass",
+
+    -- Opzionale: evita che l'erba spawni sott'acqua
+    spawn_by = "nodes:dirt_with_red_grass",
     num_spawn_by = 1,
 })
 

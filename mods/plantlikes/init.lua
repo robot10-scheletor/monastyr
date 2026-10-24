@@ -329,3 +329,20 @@ minetest.register_node("plantlikes:grass", {
         fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
     },
  })
+
+minetest.register_node("plantlikes:red_grass", {
+    description ="Red Grass",
+    drawtype = "plantlike",
+    visual_scale = 2,
+    tiles = {"red_grass.png"},
+    inventory_image = "red_grass.png",
+    paramtype = "light",
+    sunlight_propagates = true,
+    walkable = false,
+    buildable_to = true,
+    groups = {snappy = 10, grass=1},
+    selection_box = {
+        type = "fixed",
+        fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, 0.5, 6 / 16},
+    },
+})
