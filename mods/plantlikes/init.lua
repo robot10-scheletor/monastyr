@@ -333,9 +333,46 @@ minetest.register_node("plantlikes:grass", {
 minetest.register_node("plantlikes:red_grass", {
     description ="Red Grass",
     drawtype = "plantlike",
-    visual_scale = 2,
+    visual_scale = 3,
+    waving = 1,
     tiles = {"red_grass.png"},
     inventory_image = "red_grass.png",
+    paramtype = "light",
+    sunlight_propagates = true,
+    walkable = false,
+    buildable_to = true,
+    groups = {snappy = 10, grass=1},
+    selection_box = {
+        type = "fixed",
+        fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, 0.5, 6 / 16},
+    },
+})
+
+minetest.register_node("plantlikes:dry_grass", {
+    description ="Dry Grass",
+    drawtype = "plantlike",
+    visual_scale = 2,
+    waving = 1,
+    tiles = {"dry_grass.png"},
+    inventory_image = "dry_grass.png",
+    paramtype = "light",
+    sunlight_propagates = true,
+    walkable = false,
+    buildable_to = true,
+    groups = {snappy = 10, grass=1},
+    selection_box = {
+        type = "fixed",
+        fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, 0.5, 6 / 16},
+    },
+})
+
+minetest.register_node("plantlikes:obscure_tentacles", {
+    description ="Obscure Tentacles",
+    drawtype = "plantlike",
+    visual_scale = 1,
+    waving = 1,
+    tiles = {"obscure_tentacles.png"},
+    inventory_image = "obscure_tentacles.png",
     paramtype = "light",
     sunlight_propagates = true,
     walkable = false,

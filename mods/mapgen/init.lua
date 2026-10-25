@@ -843,6 +843,66 @@ minetest.register_decoration({
 
 minetest.register_decoration({
     deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass" },
+    biomes = { "magnetic_isles" },
+    y_min = 1, y_max = 300,
+    schematic = mapgen_schems .. "/floating_island_small_3.mts",
+    place_offset_y = 50,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.001,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass" },
+    biomes = { "magnetic_isles" },
+    y_min = 1, y_max = 300,
+    schematic = mapgen_schems .. "/floating_island_small_4.mts",
+    place_offset_y = 50,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.001,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass" },
+    biomes = { "magnetic_isles" },
+    y_min = 1, y_max = 300,
+    schematic = mapgen_schems .. "/floating_island_small_5.mts",
+    place_offset_y = 50,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.001,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass" },
+    biomes = { "magnetic_isles" },
+    y_min = 1, y_max = 300,
+    schematic = mapgen_schems .. "/floating_island_small_6.mts",
+    place_offset_y = 50,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.001,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_grass" },
+    biomes = { "magnetic_isles" },
+    y_min = 1, y_max = 300,
+    schematic = mapgen_schems .. "/floating_island_small_7.mts",
+    place_offset_y = 50,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.001,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
     place_on = { "nodes:sand" },
     biomes = { "magnetic_isles_waters" },
     y_min = -10, y_max = 1,
@@ -1050,6 +1110,58 @@ minetest.register_decoration({
     -- Opzionale: evita che l'erba spawni sott'acqua
     spawn_by = "nodes:dirt_with_red_grass",
     num_spawn_by = 1,
+})
+
+minetest.register_decoration({
+    name = "plantlikes:dry_grass",
+    deco_type = "simple",
+    place_on = {"nodes:dirt_with_dry_grass"},
+    place_offset_y = 0,
+    sidelen = 16,
+    noise_params = {
+        offset = 0.09,     -- offset leggermente positivo per garantire una copertura base
+        scale = 0.3,       -- Aumenta (es. 0.2 o 0.3) per avere macchie più dense
+        spread = {x = 100, y = 100, z = 100}, -- Dimensione dei "gruppi" di erba
+        seed = 421,        -- Cambia questo numero per cambiare il pattern di generazione
+        octaves = 3,
+        persist = 0.6
+    },
+    biomes = {"savanna", "ebony_forest"},
+    -- Limiti di altezza (Y)
+y_min = 1,
+y_max = 31000,
+-- Il nodo da posizionare (la tua erba plantlike)
+decoration = "plantlikes:dry_grass",
+
+-- Opzionale: evita che l'erba spawni sott'acqua
+spawn_by = "nodes:dirt_with_dry_grass",
+num_spawn_by = 1,
+})
+
+minetest.register_decoration({
+    name = "plantlikes:obscure_tentacles",
+    deco_type = "simple",
+    place_on = {"nodes:dirt_with_obscure_grass"},
+    place_offset_y = 0,
+    sidelen = 16,
+    noise_params = {
+        offset = 0.1,     -- offset leggermente positivo per garantire una copertura base
+        scale = 0.3,       -- Aumenta (es. 0.2 o 0.3) per avere macchie più dense
+        spread = {x = 100, y = 100, z = 100}, -- Dimensione dei "gruppi" di erba
+        seed = 421,        -- Cambia questo numero per cambiare il pattern di generazione
+        octaves = 3,
+        persist = 0.6
+    },
+    biomes = {"obscure_lands"},
+    -- Limiti di altezza (Y)
+y_min = 1,
+y_max = 31000,
+-- Il nodo da posizionare (la tua erba plantlike)
+decoration = "plantlikes:obscure_tentacles",
+
+-- Opzionale: evita che l'erba spawni sott'acqua
+spawn_by = "nodes:dirt_with_obscure_grass",
+num_spawn_by = 1,
 })
 
 minetest.register_ore({
