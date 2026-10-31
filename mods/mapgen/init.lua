@@ -38,7 +38,7 @@ minetest.register_biome({
     node_water = "nodes:saltwater_source",
     -- ESTENSIONI VERTICALI
     y_min = -31000,
-    y_max = 40,
+    y_max = 31000,
 
     -- PUNTI CLIMATICI
     heat_point = 90,
@@ -1042,9 +1042,57 @@ minetest.register_decoration({
     place_offset_y = -13,
     flags = "place_center_x, place_center_z",
     rotation = "random",
-    fill_ratio = 0.00001,
+    fill_ratio = 0.000001,
 })
 
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_obscure_grass" },
+    biomes = { "obscure_lands" },
+    y_min = 1, y_max = 3000,
+    schematic = mapgen_schems .. "/black_diamond_boulder.mts",
+    place_offset_y = -1,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.0001,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:sand" },
+    biomes = { "desert" },
+    y_min = 1, y_max = 70,
+    schematic = mapgen_schems .. "/oasis.mts",
+    place_offset_y = -18,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.000001,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_snow" },
+    biomes = { "permafrost" },
+    y_min = 1, y_max = 31000,
+    schematic = mapgen_schems .. "/ice_spike.mts",
+    place_offset_y = -20,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.000001,
+})
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = { "nodes:dirt_with_snow" },
+    biomes = { "permafrost" },
+    y_min = 1, y_max = 31000,
+    schematic = mapgen_schems .. "/ice_spike.mts",
+    place_offset_y = -30,
+    flags = "place_center_x, place_center_z",
+    rotation = "random",
+    fill_ratio = 0.0001,
+})
 
 minetest.register_decoration({
     name = "plantlikes:grass",
@@ -1110,6 +1158,58 @@ minetest.register_decoration({
     -- Opzionale: evita che l'erba spawni sott'acqua
     spawn_by = "nodes:dirt_with_red_grass",
     num_spawn_by = 1,
+})
+
+minetest.register_decoration({
+    name = "plantlikes:frozen_grass",
+    deco_type = "simple",
+    place_on = {"nodes:dirt_with_snow"},
+    place_offset_y = 0,
+    sidelen = 16,
+    noise_params = {
+        offset = 0.50,     -- offset leggermente positivo per garantire una copertura base
+        scale = 0.3,       -- Aumenta (es. 0.2 o 0.3) per avere macchie più dense
+        spread = {x = 100, y = 100, z = 100}, -- Dimensione dei "gruppi" di erba
+        seed = 421,        -- Cambia questo numero per cambiare il pattern di generazione
+        octaves = 3,
+        persist = 0.6
+    },
+    biomes = {"permafrost",},
+    -- Limiti di altezza (Y)
+y_min = 1,
+y_max = 31000,
+-- Il nodo da posizionare (la tua erba plantlike)
+decoration = "plantlikes:frozen_grass",
+
+-- Opzionale: evita che l'erba spawni sott'acqua
+spawn_by = "nodes:dirt_with_snow",
+num_spawn_by = 1,
+})
+
+minetest.register_decoration({
+    name = "plantlikes:magic_grass",
+    deco_type = "simple",
+    place_on = {"nodes:dirt_with_magic_grass"},
+    place_offset_y = 0,
+    sidelen = 16,
+    noise_params = {
+        offset = 0.50,     -- offset leggermente positivo per garantire una copertura base
+        scale = 0.3,       -- Aumenta (es. 0.2 o 0.3) per avere macchie più dense
+        spread = {x = 100, y = 100, z = 100}, -- Dimensione dei "gruppi" di erba
+        seed = 421,        -- Cambia questo numero per cambiare il pattern di generazione
+        octaves = 3,
+        persist = 0.6
+    },
+    biomes = {"magic_lands",},
+    -- Limiti di altezza (Y)
+y_min = 1,
+y_max = 31000,
+-- Il nodo da posizionare (la tua erba plantlike)
+decoration = "plantlikes:magic_grass",
+
+-- Opzionale: evita che l'erba spawni sott'acqua
+spawn_by = "nodes:dirt_with_magic_grass",
+num_spawn_by = 1,
 })
 
 minetest.register_decoration({

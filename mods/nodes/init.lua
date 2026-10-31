@@ -81,6 +81,78 @@ minetest.register_node("nodes:ash", {
         end,
 })
 
+minetest.register_node("nodes:barricade", {
+    description = "Barricade",
+
+    -- Uso della mesh personalizzata e texture
+    drawtype = "mesh",
+    mesh = "barricade.obj",
+    tiles = {"barricade.png"},
+
+    -- Gestione luce e rotazione automatica in base al giocatore
+    paramtype = "light",
+    paramtype2 = "facedir",
+    sunlight_propagates = true,
+
+    -- Box di collisione, selezione e forma spostati sull'altro lato del blocco
+    node_box = {
+        type = "fixed",
+        fixed = {
+            {-0.5, -0.5, 0.25, 0.5, 0.5, 0.5}, -- Spostato sul lato opposto (da 0.25 a 0.5)
+        },
+    },
+    selection_box = {
+        type = "fixed",
+        fixed = {
+            {-0.5, -0.5, 0.25, 0.5, 0.5, 0.5},
+        },
+    },
+    collision_box = {
+        type = "fixed",
+        fixed = {
+            {-0.5, -0.5, 0.25, 0.5, 0.5, 0.5},
+        },
+    },
+
+    groups = {choppy = 5},
+})
+
+minetest.register_node("nodes:bed", {
+    description = "Bed",
+
+    -- Uso della mesh personalizzata e texture
+    drawtype = "mesh",
+    mesh = "bed.obj",
+    tiles = {"bed.png"},
+
+    -- Gestione luce e rotazione automatica in base al giocatore
+    paramtype = "light",
+    paramtype2 = "facedir",
+    sunlight_propagates = true,
+
+    -- Box di collisione, selezione e forma: mezzo blocco in altezza, lungo due blocchi in profondità (Z)
+node_box = {
+    type = "fixed",
+    fixed = {
+        {-0.5, -0.5, -0.5, 0.5, 0.0, 1.5}, -- X: larghezza intera, Y: metà altezza (-0.5 a 0.0), Z: lunghezza doppio blocco (-0.5 a 1.5)
+    },
+},
+selection_box = {
+    type = "fixed",
+    fixed = {
+        {-0.5, -0.5, -0.5, 0.5, 0.0, 1.5},
+    },
+},
+collision_box = {
+    type = "fixed",
+    fixed = {
+        {-0.5, -0.5, -0.5, 0.5, 0.0, 1.5},
+    },
+},
+
+groups = {choppy = 5},
+})
+
 minetest.register_node("nodes:birch_leaves", {
     description = "Birch Leaves",
     drawtype = "allfaces_optional",
@@ -183,6 +255,33 @@ minetest.register_node("nodes:cement", {
     tiles = {"cement.png"},
     groups = {cracky=6, stone=1},
     is_ground_content = true,
+})
+
+minetest.register_node("nodes:chair", {
+    description = "Chair",
+
+    -- Uso della mesh personalizzata e texture
+    drawtype = "mesh",
+    mesh = "chair.obj",
+    tiles = {"chair.png"},
+
+    -- Gestione luce e rotazione automatica in base al giocatore
+    paramtype = "light",
+    paramtype2 = "facedir",
+    sunlight_propagates = true,
+
+    -- Box di collisione, selezione e forma: mezzo blocco in altezza, lungo due blocchi in profondità (Z)
+node_box = {
+    type = "regular",
+},
+selection_box = {
+    type = "regular",
+},
+collision_box = {
+    type = "regular",
+},
+
+groups = {choppy = 5},
 })
 
 minetest.register_node("nodes:coal_ore", {
@@ -393,6 +492,17 @@ minetest.register_node("nodes:frostwood_planks", {
     is_ground_content = false,
 })
 
+minetest.register_node("nodes:glass", {
+    description = "Glass",
+    drawtype = "glasslike",
+    tiles = {"glass.png"},
+    groups = {cracky=10},
+    is_ground_content = true,
+    use_texture_alpha = "blend",
+    paramtype = "light",
+    sunlight_propagates = true
+})
+
 minetest.register_node("nodes:glassified_sand", {
     description = "Glassified Sand",
     drawtype = "glasslike",
@@ -429,6 +539,17 @@ minetest.register_node("nodes:ice", {
     description = "Ice",
     drawtype = "glasslike",
     tiles = {"ice.png"},
+    is_ground_content = false,
+    paramtype = "light",
+    use_texture_alpha = "blend",
+    sunlight_propagates = true,
+    groups = {cracky = 9, cools_lava = 1, slippery = 10},
+})
+
+minetest.register_node("nodes:ice_bricks", {
+    description = "Ice Bricks",
+    drawtype = "glasslike",
+    tiles = {"ice_bricks.png"},
     is_ground_content = false,
     paramtype = "light",
     use_texture_alpha = "blend",
@@ -737,6 +858,20 @@ minetest.register_node("nodes:poplar_planks", {
     is_ground_content = false,
 })
 
+minetest.register_node("nodes:reinforced_concrete", {
+    description = "Reinforced Concrete",
+    tiles = {"reinforced_concrete.png"},
+    groups = {cracky=9, stone=1},
+    is_ground_content = false,
+})
+
+minetest.register_node("nodes:rubble", {
+    description = "Rubble",
+    tiles = {"rubble.png"},
+    groups = {cracky=9, stone=1},
+    is_ground_content = false,
+})
+
 minetest.register_node("nodes:saltwater_flowing", {
     description = "Flowing Saltwater",
     drawtype = "flowingliquid",
@@ -836,6 +971,33 @@ minetest.register_node("nodes:silver_ore", {
     groups = {cracky = 7, stone=1},
 })
 
+minetest.register_node("nodes:sink", {
+    description = "Sink",
+
+    -- Uso della mesh personalizzata e texture
+    drawtype = "mesh",
+    mesh = "sink.obj",
+    tiles = {"sink.png"},
+
+    -- Gestione luce e rotazione automatica in base al giocatore
+    paramtype = "light",
+    paramtype2 = "facedir",
+    sunlight_propagates = true,
+
+    -- Box di collisione, selezione e forma: mezzo blocco in altezza, lungo due blocchi in profondità (Z)
+node_box = {
+    type = "regular",
+},
+selection_box = {
+    type = "regular",
+},
+collision_box = {
+    type = "regular",
+},
+
+groups = {choppy = 5},
+})
+
 minetest.register_node("nodes:snow", {
     description = "Snow",
                        tiles = {"snow.png"},
@@ -905,6 +1067,56 @@ minetest.register_node("nodes:snow_block", {
         end,
 })
 
+minetest.register_node("nodes:snow_bricks", {
+    description = "Snow Bricks",
+    tiles = {"snow_bricks.png"},
+    paramtype = "light",
+    floodable = true,
+    groups = {crumbly = 5, snowy = 1},
+    on_construct = function(pos)
+    pos.y = pos.y - 1
+    if minetest.get_node(pos).name == "nodes:dirt_with_grass" then
+        minetest.set_node(pos, {name = "nodes:dirt_with_snow"})
+        end
+        end,
+})
+
+minetest.register_node("nodes:sofa", {
+    description = "Sofa",
+
+    -- Uso della mesh personalizzata e texture
+    drawtype = "mesh",
+    mesh = "sofa.obj",
+    tiles = {"sofa.png"},
+
+    -- Gestione luce e rotazione automatica in base al giocatore
+    paramtype = "light",
+    paramtype2 = "facedir",
+    sunlight_propagates = true,
+
+    -- Box di collisione, selezione e forma: mezzo blocco in altezza, lungo due blocchi in profondità (Z)
+node_box = {
+    type = "fixed",
+    fixed = {
+        {-0.5, -0.5, -0.5, 0.5, 0.0, 1.5}, -- X: larghezza intera, Y: metà altezza (-0.5 a 0.0), Z: lunghezza doppio blocco (-0.5 a 1.5)
+    },
+},
+selection_box = {
+    type = "fixed",
+    fixed = {
+        {-0.5, -0.5, -0.5, 0.5, 0.0, 1.5},
+    },
+},
+collision_box = {
+    type = "fixed",
+    fixed = {
+        {-0.5, -0.5, -0.5, 0.5, 0.0, 1.5},
+    },
+},
+
+groups = {choppy = 5},
+})
+
 minetest.register_node("nodes:spruce_leaves", {
     description = "Spruce Leaves",
     drawtype = "allfaces_optional",
@@ -954,6 +1166,42 @@ minetest.register_node("nodes:stone_bricks", {
 
 minetest.register_alias("mapgen_stone", "nodes:stone")
 
+minetest.register_node("nodes:table", {
+    description = "Table",
+
+    -- Uso della mesh personalizzata e texture
+    drawtype = "mesh",
+    mesh = "table.obj",
+    tiles = {"table.png"},
+
+    -- Gestione luce e rotazione automatica in base al giocatore
+    paramtype = "light",
+    paramtype2 = "facedir",
+    sunlight_propagates = true,
+
+    -- Box di collisione, selezione e forma: alto un blocco intero e lungo due blocchi in profondità (Z)
+node_box = {
+    type = "fixed",
+    fixed = {
+        {-0.5, -0.5, -0.5, 0.5, 0.5, 1.5}, -- X: -0.5 a 0.5, Y: -0.5 a 0.5 (altezza intera), Z: -0.5 a 1.5 (lungo due blocchi)
+    },
+},
+selection_box = {
+    type = "fixed",
+    fixed = {
+        {-0.5, -0.5, -0.5, 0.5, 0.5, 1.5},
+    },
+},
+collision_box = {
+    type = "fixed",
+    fixed = {
+        {-0.5, -0.5, -0.5, 0.5, 0.5, 1.5},
+    },
+},
+
+groups = {choppy = 5},
+})
+
 minetest.register_node("nodes:tin_block", {
     description = "Tin Block",
     tiles = {"tin_block.png"},
@@ -989,6 +1237,57 @@ minetest.register_node("nodes:turquoise_ore", {
     },
     groups = {cracky = 7, stone=1},
 })
+
+minetest.register_node("nodes:tv", {
+    description = "Tv",
+
+    -- Uso della mesh personalizzata e texture
+    drawtype = "mesh",
+    mesh = "tv.obj",
+    tiles = {"tv.png"},
+
+    -- Gestione luce e rotazione automatica in base al giocatore
+    paramtype = "light",
+    paramtype2 = "facedir",
+    sunlight_propagates = true,
+
+    -- Box di collisione, selezione e forma: mezzo blocco in altezza, lungo due blocchi in profondità (Z)
+node_box = {
+    type = "regular",
+},
+selection_box = {
+    type = "regular",
+},
+collision_box = {
+    type = "regular",
+},
+
+groups = {choppy = 5},
+})
+
+minetest.register_node("nodes:water_bottle", {
+    description = "Water Bottle",
+
+    -- Uso della mesh personalizzata
+    drawtype = "mesh",
+    mesh = "bottle.obj",
+
+    -- Texture applicata alla mesh
+    tiles = {"water_bottle.png"},
+
+    -- Gestione luce e rotazione automatica in base al giocatore
+    paramtype = "light",
+    paramtype2 = "facedir",
+
+    -- Selezione e collisione
+    selection_box = {
+        type = "regular"
+    },
+    walkable = false,
+
+    groups = {crumbly = 10, oddly_breakable_by_hand = 10},
+})
+
 
 minetest.register_node("nodes:water_column", {
     description = "Water Column",
@@ -1061,6 +1360,32 @@ minetest.register_node("nodes:water_flowing", {
     groups = {liquid = 3, water = 1, not_in_creative_inventory = 1},
 })
 
+minetest.register_node("nodes:wc", {
+    description = "Wc",
+
+    -- Uso della mesh personalizzata e texture
+    drawtype = "mesh",
+    mesh = "wc.obj",
+    tiles = {"wc.png"},
+
+    -- Gestione luce e rotazione automatica in base al giocatore
+    paramtype = "light",
+    paramtype2 = "facedir",
+    sunlight_propagates = true,
+
+    -- Box di collisione, selezione e forma: mezzo blocco in altezza, lungo due blocchi in profondità (Z)
+node_box = {
+    type = "regular",
+},
+selection_box = {
+    type = "regular",
+},
+collision_box = {
+    type = "regular",
+},
+
+groups = {choppy = 5},
+})
 
 minetest.register_node("nodes:water_source", {
     description = "Water Source",

@@ -348,6 +348,42 @@ minetest.register_node("plantlikes:red_grass", {
     },
 })
 
+minetest.register_node("plantlikes:frozen_grass", {
+    description ="Frozen Grass",
+    drawtype = "plantlike",
+    visual_scale = 1,
+    waving = 1,
+    tiles = {"frozen_grass.png"},
+    inventory_image = "frozen_grass.png",
+    paramtype = "light",
+    sunlight_propagates = true,
+    walkable = false,
+    buildable_to = true,
+    groups = {snappy = 8, grass=1},
+    selection_box = {
+        type = "fixed",
+        fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
+    },
+})
+
+minetest.register_node("plantlikes:magic_grass", {
+    description ="Magic Grass",
+    drawtype = "plantlike",
+    visual_scale = 1,
+    waving = 1,
+    tiles = {"magic_grass.png"},
+    inventory_image = "magic_grass.png",
+    paramtype = "light",
+    sunlight_propagates = true,
+    walkable = false,
+    buildable_to = true,
+    groups = {snappy = 8, grass=1},
+    selection_box = {
+        type = "fixed",
+        fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -5 / 16, 6 / 16},
+    },
+})
+
 minetest.register_node("plantlikes:dry_grass", {
     description ="Dry Grass",
     drawtype = "plantlike",
@@ -369,11 +405,17 @@ minetest.register_node("plantlikes:dry_grass", {
 minetest.register_node("plantlikes:obscure_tentacles", {
     description ="Obscure Tentacles",
     drawtype = "plantlike",
-    visual_scale = 1,
+    visual_scale = 1.3,
     waving = 1,
-    tiles = {"obscure_tentacles.png"},
-    inventory_image = "obscure_tentacles.png",
+    tiles  = {
+        {
+            name = "obscure_tentacles.png",
+            animation = {type="vertical_frames", aspect_w=32, aspect_h=32, length=2.0},
+        }
+    },
+    inventory_image = "obscure_tentacles_steady.png",
     paramtype = "light",
+    place_offset_y = -1,
     sunlight_propagates = true,
     walkable = false,
     buildable_to = true,
