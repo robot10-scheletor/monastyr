@@ -1,3 +1,6 @@
+local modpath = minetest.get_modpath("nodes")
+dofile(modpath .. "/lava_cooling.lua")
+
 print("This file will be run at load time!")
 
 minetest.register_node("nodes:acacia_leaves", {
@@ -913,7 +916,7 @@ minetest.register_node("nodes:saltwater_flowing", {
     liquid_alternative_flowing = "nodes:saltwater_flowing",
     liquid_viscosity = 1,
     post_effect_color = {a = 150, r = 10, g = 60, b = 140},
-    groups = {liquid = 3, water = 1, not_in_creative_inventory = 1},
+    groups = {liquid = 3, water = 1, not_in_creative_inventory = 1, cools_lava = 1},
 })
 
 
@@ -945,7 +948,7 @@ minetest.register_node("nodes:saltwater_source", {
     liquid_alternative_flowing = "nodes:saltwater_flowing",
     liquid_viscosity = 1,
     post_effect_color = {a = 150, r = 10, g = 60, b = 140},
-    groups = {liquid = 3, water = 1},
+    groups = {liquid = 3, water = 1, cools_lava = 1},
 })
 
 minetest.register_alias("mapgen_water_source", "nodes:saltwater_source")
@@ -1313,7 +1316,7 @@ minetest.register_node("nodes:water_column", {
     is_ground_content = false,
     drop = "",
     post_effect_color = {a = 150, r = 10, g = 60, b = 140},
-    groups = {liquid = 3, water = 1},
+    groups = {liquid = 3, water = 1, cools_lava = 1},
 })
 
 minetest.register_node("nodes:water_flowing", {
@@ -1357,7 +1360,7 @@ minetest.register_node("nodes:water_flowing", {
     liquid_alternative_flowing = "nodes:water_flowing",
     liquid_viscosity = 1,
     post_effect_color = {a = 150, r = 10, g = 60, b = 140},
-    groups = {liquid = 3, water = 1, not_in_creative_inventory = 1},
+    groups = {liquid = 3, water = 1, not_in_creative_inventory = 1, cools_lava = 1},
 })
 
 minetest.register_node("nodes:wc", {
@@ -1415,7 +1418,7 @@ minetest.register_node("nodes:water_source", {
     liquid_alternative_flowing = "nodes:water_flowing",
     liquid_viscosity = 1,
     post_effect_color = {a = 150, r = 10, g = 60, b = 140},
-    groups = {liquid = 3, water = 1},
+    groups = {liquid = 3, water = 1, cools_lava = 1},
 })
 
 minetest.register_node("nodes:weeping_willow_leaves", {
