@@ -22,7 +22,7 @@ minetest.register_node("nodes:acacia_log", {
 minetest.register_node("nodes:acacia_planks", {
     description = "Acacia Planks",
     tiles = {"acacia_planks.png"},
-    groups = {choppy=5, wood = 1},
+    groups = {choppy=5, wood = 1, flammable = 1},
     is_ground_content = false,
 })
 
@@ -1469,27 +1469,3 @@ minetest.register_node("nodes:willow_planks", {
     is_ground_content = false,
 })
 
-minetest.register_node("nodes:workbench", {
-    description = "Workbench",
-
-    -- Uso della mesh personalizzata
-    drawtype = "mesh",
-    mesh = "workbench.obj",
-
-    -- Texture applicata alla mesh
-    tiles = {"workbench.png"},
-
-    -- Gestione luce e rotazione automatica in base al giocatore
-    paramtype = "light",
-    paramtype2 = "facedir",
-
-    -- Selezione e collisione
-    selection_box = {
-        type = "regular"
-    },
-    collision_box = {
-        type = "regular"
-    },
-
-    groups = {cracky = 3, oddly_breakable_by_hand = 2},
-})
